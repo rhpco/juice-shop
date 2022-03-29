@@ -8,14 +8,10 @@ jobs:
         uses: snyk/actions@0.3.0
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      - uses: actions/checkout@master
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master
-        continue-on-error: true # To make sure that SARIF upload gets called
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
+          command: monitor
           args: --sarif-file-output=snyk.sarif
+          continue-on-error: true
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v1
         with:
