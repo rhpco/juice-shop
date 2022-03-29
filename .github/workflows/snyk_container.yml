@@ -1,4 +1,4 @@
-name: Snyk Container and GitHub Security example
+name: Snyk Container
 on: push
 jobs:
   snyk:
