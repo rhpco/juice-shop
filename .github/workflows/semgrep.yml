@@ -42,7 +42,7 @@ jobs:
       - uses: returntocorp/semgrep-action@v1
         with:
           config: >- # more at semgrep.dev/explore
-            p/security-audit
+            p/owasp-top-ten
             p/secrets
           auditOn: push
           generateSarif: "1"
